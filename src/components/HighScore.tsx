@@ -15,6 +15,6 @@ export function HighScore({score}: Props) {
   }, [score, highScore])
 
   return (
-    <div>High score: {highScore}</div>
+    <p className="text-center">High score: {highScore}</p>
   )
 }

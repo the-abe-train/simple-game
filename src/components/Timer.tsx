@@ -73,14 +73,25 @@ export function Timer({ playing, setPlaying, setScore }: Props) {
   }
 
   return (
-    <div>
-      <h3>Timer: {timeLeftStr(elapsed)}</h3>
+    <div className="my-1 mx-auto w-fit">
+      <h3 className="text-center text-3xl">Timer</h3>
+      <p className="text-center text-xl">{timeLeftStr(elapsed)}</p>
 
       {elapsed !== timeLimit && (
-        <button onClick={togglePlay}>{playingText}</button>
+        <button
+          className="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={togglePlay}
+        >
+          {playingText}
+        </button>
       )}
 
-      <button onClick={resetTimer}>Reset</button>
+      <button
+        className="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={resetTimer}
+      >
+        Reset
+      </button>
     </div>
   );
 }
