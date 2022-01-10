@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Game } from "./components/Game";
+import { HighScore } from "./components/HighScore";
+import { Timer } from "./components/Timer";
 
 function App() {
+  const [playing, setPlaying] = useState(false);
+  const [score, setScore] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timer playing={playing} setPlaying={setPlaying} setScore={setScore} />
+      <Game score={score} setScore={setScore} playing={playing} />
+      <HighScore score={score} />
     </div>
   );
 }
